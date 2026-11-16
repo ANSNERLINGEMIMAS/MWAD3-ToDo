@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMate - My Daily Tasks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>TaskMate</h1>
+            <p>Organize your day, one task at a time.</p>
+        </header>
+
+        <section class="dashboard">
+            <div class="stat-card">
+                <h3 id="totalTasks">0</h3>
+                <p>Total Tasks</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="pendingTasks">0</h3>
+                <p>Pending</p>
+            </div>
+
+            <div class="stat-card">
+                <h3 id="completedTasks">0</h3>
+                <p>Completed</p>
+            </div>
+        </section>
+
+        <section class="task-section">
+
+            <h2>My Tasks</h2>
+
+            <div class="input-area">
+                <input type="text" id="taskInput"
+                    placeholder="Enter a new task...">
+
+                <button onclick="addTask()">Add Task</button>
+            </div>
+
+            <input type="text" id="searchInput"
+                placeholder="Search your tasks..."
+                oninput="displayTasks()">
+
+            <div class="filters">
+                <button class="filter active"
+                    onclick="setFilter('all', this)">All</button>
+
+                <button class="filter"
+                    onclick="setFilter('pending', this)">Pending</button>
+
+                <button class="filter"
+                    onclick="setFilter('completed', this)">Completed</button>
+            </div>
+
+            <ul id="taskList"></ul>
+
+            <p id="emptyMessage">No tasks available. Add your first task!</p>
+
+            <button class="clear-btn" onclick="clearCompleted()">
+                Clear Completed Tasks
+            </button>
+
+        </section>
+
+        <footer>
+            <p>Ans Nerling Emima | Register No: 212224040027</p>
+            <p>© 2026 TaskMate. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
